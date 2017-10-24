@@ -15,7 +15,7 @@ contract("Document Tests", function(accounts) {
             txResult = await docReg.createDocument(hypothesis.secret, {from: accounts[0]})
             // console.log(txResult.logs[0].args)
             createdDocAddress = txResult.logs[0].args.documentAddress;
-            console.log("document created at address", createdDocAddress)
+            // console.log(createdDocAddress)
             exists = await docReg.documentExists.call(createdDocAddress)
             assert.isTrue(exists, "document not known to DocumentRegistry")
         })
